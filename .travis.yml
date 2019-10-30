@@ -7,3 +7,10 @@ before_install:
 
 script:
   - docker run -e CI=true rishi/react-cicd npm run test
+
+deploy:
+  provider: heroku
+  region: "United States"
+  api_key:
+    secure: "this-is-my-api_key"
+  app: "docker-react-ci"
