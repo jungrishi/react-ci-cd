@@ -6,4 +6,4 @@ before_install:
   - docker build -t rishi/react-cicd -f Dockerfile.dev .
 
 script:
-  - docker run rishi/react-cicd npm run test -- --coverage
+  - docker run -e CI=true rishi/react-cicd npm run test -- --coverage
