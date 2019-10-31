@@ -11,5 +11,6 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: "this-is-my-api_key"
-  app: "docker-react-ci"
+    this-is-my-api_key
+    # secure: "this-is-my-api_key"
+  app: docker-react-ci
