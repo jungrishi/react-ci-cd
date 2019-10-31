@@ -1,16 +1,11 @@
 sudo: required
 services:
   - docker
-
 before_install:
   - docker build -t rishi/react-cicd -f Dockerfile.dev .
-
 script:
   - docker run -e CI=true rishi/react-cicd npm run test
-
 deploy:
   provider: heroku
   api_key:
-    this-is-my-api_key
-    # secure: "this-is-my-api_key"
-  app: docker-react-ci
+    secure: CY72XQPAgCqkOjXDou5P7RuqTpjiSWvASd80eRyLFJVSKcAWXDB1zDkPeHycFN/h05NxGquUxjuKENGMnwKIIRsmfU2UhZPAqjjNaqlR4sGa2JNRKucI6Nfm7Oi6Hns5Q82WPJU7IRUJlNDE9bl4dyZqJR8F+VsdaTI0zxkCLolWLvALo6wWYPAgaRcasg13QwxBJITn62WnG5tVnapyqCJjvxQNR117pZT5DNLbWOaeOZSMlTGuQ7tXK0BGkrUl4MbfqSOVz4SWjJnH4r4WPc1UxW6fgLjDKEFuxfXsh6/a+GhN3dlbaEPzS9S2uSaOHD1pO838NzjZ/t8FOvPuAoYe1r/RDUGzRQpD3j+4zh4Mwm1CO/tazJ4l13uUVnHSekenh11e0P8dbZ7w46CFIc0fQVKoCW24cpAC8G6VcTueIBjkOL/1CExnUPQ9kUyAS/aXHMeo+Yo/ZMZdUXfY8No2cxPtza+6HS0iWApj4e6vvcbMuJP+B4UV6NGgww9upfIsyQUsiM3Hwi5mogrGSLqnIvlLFT2yfs1KhNitk9szDNTUn2IRq6X8JoorU+yIBJXQdiA1fkrLyCcA7JaGuRhSLlrpLXyPNR84W7SQnrt9nXEXSj5tk4TuLau8c+1CgU32b5O0wVvYbslvHi30i0sq3QGiVHn0IAJfqQCtNp0=
